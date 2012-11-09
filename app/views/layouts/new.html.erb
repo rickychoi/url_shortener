@@ -1,0 +1,23 @@
+<h1>Chode.ly</h1>
+
+<h4> short. wide. fast. </h4>
+
+<% if @input.errors.any? %>
+  <ul>
+    <% @input.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @input do |f| %>
+  <p>
+    <%= f.label :url %><br>
+    <%= f.text_field :original %>
+
+    <% f.label :shorten %>
+    <%= f.submit value="Choden" %>
+  </p>
+<% end %>
+
+<%= link_to "chodes of the past", 'inputs' %>

@@ -1,9 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  original: MyString
-  shortened: MyString
+  input_id: 1
 
 two:
-  original: MyString
-  shortened: MyString
+  input_id: 1

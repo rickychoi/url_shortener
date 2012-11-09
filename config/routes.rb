@@ -1,6 +1,30 @@
 Dumbly::Application.routes.draw do
 
   resources :inputs
+  resources :page_view
+
+
+
+
+
+
+
+  root :to => "inputs#new"
+  #
+  get "inputs/new"
+
+
+
+  match "page_view/:input_id" => "page_view#create"
+  match "page_views" => "page_view#show"
+
+
+
+
+
+  Input.all.each do |input|
+    get "/#{input.shortened}" => redirect("#{input.original}")
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -50,7 +74,7 @@ Dumbly::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'inputs#new'
+
 
   # See how all your routes lay out with "rake routes"
 

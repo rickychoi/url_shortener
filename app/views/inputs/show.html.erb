@@ -1,0 +1,7 @@
+<h1>Thanks for choding.</h1>
+<p>
+  original url: <%= @input.original %><br/><br/>
+  choded url:<%= link_to "localhost:3000/#{@input.shortened}", page_view_path, :input_id => @input.id, :yo => "#{@input.original}", :method => :post %>
+</p>
+
+<%= image_tag("chortbus.jpeg")%>

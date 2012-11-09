@@ -1,0 +1,11 @@
+
+<h1>
+<% @array = []%>
+<% PageView.find(:all).each do |view|%>
+<%Input.find_by_id(view.input_id) do |input|%>
+<% @array << input.original if !input.nil? %><br/>
+<% end %>
+<% end %>
+<% @hash =  @array.inject(Hash.new(0)) { |total, e| total[e] += 1; total} %>
+<%= "url: #{@hash.first.first}.........page_views: #{@hash.first.second}"%>
+</h1>
